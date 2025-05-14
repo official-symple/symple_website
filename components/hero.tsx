@@ -47,7 +47,7 @@ export default function Hero() {
             <span className="text-symple">SYMPLE</span>하게 하다
           </h1>
           <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
-            디지털 페노타이핑 기술로 청년들의 정신 건강을 지키고, 일상 속에서 자신의 감정을 이해하고 관리할 수 있도록
+            디지털 피노타이핑 기술로 청년들의 정신 건강을 지키고, 일상 속에서 자신의 감정을 이해하고 관리할 수 있도록
             돕습니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -74,21 +74,12 @@ export default function Hero() {
             className="relative mx-auto w-[280px] md:w-[320px] transition-transform duration-300 ease-out"
           >
             <Image
-              src="/placeholder.svg?height=650&width=320"
+              src="/images/symple-app-1.png"
               alt="Symple 앱 화면"
               width={320}
               height={650}
-              className="rounded-[32px] shadow-2xl border-8 border-gray-800"
+              className="rounded-[32px] shadow-2xl"
             />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[240px] h-[520px] overflow-hidden rounded-[24px]">
-              <Image
-                src="/placeholder.svg?height=520&width=240"
-                alt="Symple 앱 인터페이스"
-                width={240}
-                height={520}
-                className="object-cover"
-              />
-            </div>
           </div>
 
           <div className="absolute -top-10 -right-10 w-24 h-24 text-6xl animate-bounce-slow">!</div>
@@ -103,7 +94,7 @@ export default function Hero() {
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="text-teal-600"
+          className="text-symple"
         >
           <path
             d="M12 5V19M12 19L5 12M12 19L19 12"
@@ -150,15 +141,6 @@ export default function Hero() {
         }
         .animate-wiggle {
           animation: wiggle 4s ease-in-out infinite;
-        }
-        .text-symple {
-          color: #34D399; /* Example color, adjust as needed */
-        }
-        .bg-symple {
-          background-color: #34D399; /* Example color, adjust as needed */
-        }
-        .border-symple {
-          border-color: #34D399; /* Example color, adjust as needed */
         }
       `}</style>
     </section>

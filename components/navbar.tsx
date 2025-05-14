@@ -33,37 +33,30 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="relative w-10 h-10 mr-2">
-              <Image
-                src="/images/symple-logo.png"
-                alt="SYMPLE Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
+            <div className="relative h-10 w-40">
+              <Image src="/images/symple-wordmark.png" alt="SYMPLE Logo" fill className="object-contain" />
             </div>
-            <span className={`font-bold text-xl ${isScrolled ? "text-symple" : "text-white"}`}>SYMPLE</span>
           </Link>
 
           {!isMobile ? (
             <>
               <nav className={`flex items-center space-x-8 ${isScrolled ? "text-gray-700" : "text-white"}`}>
-                <Link href="#why-symple" className="hover:text-teal-500 transition-colors">
+                <Link href="#why-symple" className="hover:text-symple transition-colors">
                   Why SYMPLE?
                 </Link>
-                <Link href="#products" className="hover:text-teal-500 transition-colors">
+                <Link href="#products" className="hover:text-symple transition-colors">
                   제품
                 </Link>
-                <Link href="#technology" className="hover:text-teal-500 transition-colors">
+                <Link href="#technology" className="hover:text-symple transition-colors">
                   기술
                 </Link>
-                <Link href="#partners" className="hover:text-teal-500 transition-colors">
+                <Link href="#partners" className="hover:text-symple transition-colors">
                   회사 소개
                 </Link>
-                <Link href="#blog" className="hover:text-teal-500 transition-colors">
+                <Link href="#blog" className="hover:text-symple transition-colors">
                   블로그
                 </Link>
-                <Link href="#faq" className="hover:text-teal-500 transition-colors">
+                <Link href="#faq" className="hover:text-symple transition-colors">
                   FAQ
                 </Link>
               </nav>
@@ -119,52 +112,52 @@ export default function Navbar() {
             <nav className="flex flex-col space-y-4">
               <Link
                 href="#why-symple"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Why SYMPLE?
               </Link>
               <Link
                 href="#products"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 제품
               </Link>
               <Link
                 href="#technology"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 기술
               </Link>
               <Link
                 href="#partners"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 회사 소개
               </Link>
               <Link
                 href="#blog"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 블로그
               </Link>
               <Link
                 href="#faq"
-                className="text-gray-700 hover:text-teal-500 transition-colors py-2"
+                className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ
               </Link>
             </nav>
             <div className="mt-4 flex flex-col space-y-2">
-              <Button variant="outline" className="w-full border-teal-600 text-teal-600">
+              <Button variant="outline" className="w-full border-symple text-symple">
                 로그인
               </Button>
-              <Button className="w-full bg-teal-600 text-white hover:bg-teal-700">앱 다운로드</Button>
+              <Button className="w-full bg-symple text-white hover:bg-symple/90">앱 다운로드</Button>
             </div>
           </div>
         )}

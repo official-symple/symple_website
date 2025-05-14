@@ -2,6 +2,7 @@ import Hero from "@/components/hero"
 import WhySymple from "@/components/why-symple"
 import Products from "@/components/products"
 import Technology from "@/components/technology"
+import Statistics from "@/components/statistics"
 import Partners from "@/components/partners"
 import Blog from "@/components/blog"
 import FAQ from "@/components/faq"
@@ -14,6 +15,7 @@ export default function Home() {
       <WhySymple />
       <Products />
       <Technology />
+      <Statistics />
       <Partners />
       <Blog />
       <FAQ />

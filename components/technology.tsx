@@ -73,7 +73,7 @@ export default function Technology() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-2">디지털 페노타이핑</h4>
+                  <h4 className="text-xl font-semibold text-white mb-2">디지털 피노타이핑</h4>
                   <p className="text-gray-300">
                     사용자의 앱 사용 패턴, 터치 강도, 스크롤 속도 등의 행동 데이터를 분석하여 정서 상태를 예측하고
                     맞춤형 솔루션을 제공합니다.
@@ -117,7 +117,7 @@ export default function Technology() {
             <div className="bg-gray-800 rounded-xl p-6 mb-8">
               <h4 className="text-xl font-semibold text-white mb-4">임상적 효과 검증</h4>
               <p className="text-gray-300 mb-4">
-                SYMPLE의 디지털 치료제(DTx)와 페노타이핑 기술은 다양한 임상 연구를 통해 효과가 검증되었습니다.
+                SYMPLE의 디지털 치료제(DTx)와 피노타이핑 기술은 다양한 임상 연구를 통해 효과가 검증되었습니다.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-gray-700 p-4 rounded-lg text-center">

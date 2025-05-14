@@ -30,7 +30,7 @@ export default function WhySymple() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            왜 <span className="text-teal-600">SYMPLE</span>이 필요할까요?
+            왜 <span className="text-symple">SYMPLE</span>이 필요할까요?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             청년들의 정신건강 문제는 지속적으로 증가하고 있으며, 기존의 상담 서비스만으로는 접근성이 낮습니다. SYMPLE은
@@ -98,7 +98,7 @@ export default function WhySymple() {
                 <li className="flex items-start">
                   <span className="text-teal-500 mr-2">•</span>
                   <p className="text-gray-700">
-                    <strong>페노타이핑 기술:</strong> 스마트폰 사용 패턴을 분석하여 맞춤형 멘탈케어 솔루션을 제공합니다.
+                    <strong>피노타이핑 기술:</strong> 스마트폰 사용 패턴을 분석하여 맞춤형 멘탈케어 솔루션을 제공합니다.
                   </p>
                 </li>
                 <li className="flex items-start">

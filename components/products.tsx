@@ -78,21 +78,23 @@ export default function Products() {
                 transition={{ duration: 0.5 }}
                 className="order-1 md:order-2 relative"
               >
-                <div className="relative mx-auto w-[280px] md:w-[320px]">
-                  <Image
-                    src="/placeholder.svg?height=650&width=320"
-                    alt="Symple 앱 화면"
-                    width={320}
-                    height={650}
-                    className="rounded-[32px] shadow-xl border-8 border-gray-800"
-                  />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[240px] h-[520px] overflow-hidden rounded-[24px]">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
                     <Image
-                      src="/placeholder.svg?height=520&width=240"
-                      alt="Symple 앱 인터페이스"
-                      width={240}
-                      height={520}
-                      className="object-cover"
+                      src="/images/symple-app-2.png"
+                      alt="Symple 앱 화면 - CBT 정보"
+                      width={320}
+                      height={650}
+                      className="rounded-[24px] shadow-xl"
+                    />
+                  </div>
+                  <div className="relative">
+                    <Image
+                      src="/images/symple-app-3.png"
+                      alt="Symple 앱 화면 - 활력 충전 프로그램"
+                      width={320}
+                      height={650}
+                      className="rounded-[24px] shadow-xl"
                     />
                   </div>
                 </div>
@@ -115,7 +117,7 @@ export default function Products() {
                 <p className="text-xl text-gray-700 italic mb-6">"청년들의 복잡한 마음을 디지털로 탐험하다."</p>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <h4 className="font-semibold text-gray-900 mb-2">디지털 페노타이핑 기술</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">디지털 피노타이핑 기술</h4>
                     <p className="text-gray-600">
                       사용자의 게임 플레이 패턴을 분석하여 심리 상태를 파악하고, 맞춤형 멘탈케어 솔루션을 제공합니다.
                     </p>
