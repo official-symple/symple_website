@@ -75,8 +75,8 @@ export default function Technology() {
                 <div>
                   <h4 className="text-xl font-semibold text-white mb-2">디지털 피노타이핑</h4>
                   <p className="text-gray-300">
-                    사용자의 앱 사용 패턴, 터치 강도, 스크롤 속도 등의 행동 데이터를 분석하여 정서 상태를 예측하고
-                    맞춤형 솔루션을 제공합니다.
+                    사용자의 수면 시간, 걸음 수, 일광 시간 등의 행동 데이터를 분석하여 정서 상태를 예측하고 맞춤형
+                    솔루션을 제공합니다.
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function Technology() {
             <div className="bg-gray-800 rounded-xl p-6 mb-8">
               <h4 className="text-xl font-semibold text-white mb-4">임상적 효과 검증</h4>
               <p className="text-gray-300 mb-4">
-                SYMPLE의 디지털 치료제(DTx)와 피노타이핑 기술은 다양한 임상 연구를 통해 효과가 검증되었습니다.
+                SYMPLE의 디지털 인지행동치료와 피노타이핑 기술은 다양한 임상 연구를 통해 효과가 검증되었습니다.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-gray-700 p-4 rounded-lg text-center">
@@ -142,14 +142,20 @@ export default function Technology() {
             <div className="bg-gray-800 rounded-xl p-6">
               <h4 className="text-xl font-semibold text-white mb-4">학계 협업</h4>
               <p className="text-gray-300 mb-4">
-                국내외 유수의 대학 및 연구기관과 협력하여 지속적인 연구와 서비스 개선을 진행하고 있습니다.
+                유수의 대학 및 연구기관과 협력하여 지속적인 연구와 서비스 개선을 진행하고 있습니다.
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
-                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">서울대학교</div>
-                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">KAIST</div>
-                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">Stanford University</div>
-                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">MIT Media Lab</div>
-                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">한국심리학회</div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">연세대학교 심리학과</div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
+                  연세대학교 디지털정신건강연구실
+                </div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">국립정신건강복지센터</div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">대한디지털치료학회</div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">멘탈헬스코리아</div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">
+                  Digital Healthcare Partners
+                </div>
+                <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">보건복지부</div>
               </div>
             </div>
           </div>

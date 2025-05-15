@@ -14,6 +14,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               복잡한 마음을 <span className="text-yellow-300">SYMPLE</span>하게
@@ -35,32 +36,32 @@ export default function CTA() {
               </Button>
             </div>
 
-            <div className="flex justify-center space-x-8 mb-12">
-              <div className="flex flex-col items-center">
+            <div className="flex justify-center flex-wrap gap-8 mb-12">
+              <div className="flex flex-col items-center bg-white/20 rounded-xl p-4 min-w-[120px]">
                 <div className="text-4xl font-bold mb-2">10K+</div>
                 <div className="text-teal-100">활성 사용자</div>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center bg-white/20 rounded-xl p-4 min-w-[120px]">
                 <div className="text-4xl font-bold mb-2">83%</div>
                 <div className="text-teal-100">만족도</div>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center bg-white/20 rounded-xl p-4 min-w-[120px]">
                 <div className="text-4xl font-bold mb-2">4.8</div>
                 <div className="text-teal-100">앱 평점</div>
               </div>
             </div>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
             <Image
-              src="/placeholder.svg?height=50&width=160"
+              src="/placeholder.svg?height=50&width=160&text=App+Store"
               alt="App Store"
               width={160}
               height={50}
               className="h-12 w-auto"
             />
             <Image
-              src="/placeholder.svg?height=50&width=160"
+              src="/placeholder.svg?height=50&width=160&text=Google+Play"
               alt="Google Play"
               width={160}
               height={50}

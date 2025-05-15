@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="relative h-10 w-40">
+            <div className="relative h-8 w-32">
               <Image src="/images/symple-wordmark.png" alt="SYMPLE Logo" fill className="object-contain" />
             </div>
           </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
                   Why SYMPLE?
                 </Link>
                 <Link href="#products" className="hover:text-symple transition-colors">
-                  제품
+                  서비스
                 </Link>
                 <Link href="#technology" className="hover:text-symple transition-colors">
                   기술
@@ -54,7 +54,7 @@ export default function Navbar() {
                   회사 소개
                 </Link>
                 <Link href="#blog" className="hover:text-symple transition-colors">
-                  블로그
+                  아티클
                 </Link>
                 <Link href="#faq" className="hover:text-symple transition-colors">
                   FAQ
@@ -63,17 +63,23 @@ export default function Navbar() {
 
               <div className="flex items-center space-x-4">
                 <Button
-                  variant={isScrolled ? "outline" : "secondary"}
-                  className={isScrolled ? "border-symple text-symple" : "bg-white/20 text-white hover:bg-white/30"}
+                  variant="outline"
+                  className={`border-duck ${
+                    isScrolled
+                      ? "bg-duck/30 hover:bg-duck text-gray-700 hover:text-white"
+                      : "bg-duck/30 text-white hover:bg-duck"
+                  } transition-colors`}
                 >
-                  로그인
+                  오리의 꿈 다운로드
                 </Button>
                 <Button
-                  className={
-                    isScrolled ? "bg-symple text-white hover:bg-symple/90" : "bg-white text-symple hover:bg-white/90"
-                  }
+                  className={`border-symple ${
+                    isScrolled
+                      ? "bg-symple/30 hover:bg-symple text-gray-700 hover:text-white"
+                      : "bg-symple/30 text-white hover:bg-symple"
+                  } transition-colors`}
                 >
-                  앱 다운로드
+                  SYMPLE 앱 다운로드
                 </Button>
               </div>
             </>
@@ -122,7 +128,7 @@ export default function Navbar() {
                 className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                제품
+                서비스
               </Link>
               <Link
                 href="#technology"
@@ -143,7 +149,7 @@ export default function Navbar() {
                 className="text-gray-700 hover:text-symple transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                블로그
+                아티클
               </Link>
               <Link
                 href="#faq"
@@ -154,10 +160,12 @@ export default function Navbar() {
               </Link>
             </nav>
             <div className="mt-4 flex flex-col space-y-2">
-              <Button variant="outline" className="w-full border-symple text-symple">
-                로그인
+              <Button variant="outline" className="w-full border-duck bg-duck/30 hover:bg-duck hover:text-white">
+                오리의 꿈 다운로드
               </Button>
-              <Button className="w-full bg-symple text-white hover:bg-symple/90">앱 다운로드</Button>
+              <Button className="w-full border-symple bg-symple/30 hover:bg-symple hover:text-white">
+                SYMPLE 앱 다운로드
+              </Button>
             </div>
           </div>
         )}

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-6">
-              <div className="relative w-10 h-10 mr-2">
+              <div className="relative w-10 h-10 mr-2 rounded-[20px] overflow-hidden">
                 <Image
                   src="/images/symple-logo.png"
                   alt="SYMPLE Logo"
@@ -147,7 +147,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="#blog" className="text-gray-400 hover:text-teal-400 transition-colors">
-                  블로그
+                  아티클
                 </Link>
               </li>
               <li>

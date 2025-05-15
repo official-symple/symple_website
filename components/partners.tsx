@@ -5,6 +5,18 @@ import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
+const teamMembers = [
+  { name: "김민수", role: "CEO" },
+  { name: "이주원", role: "CPO" },
+  { name: "강민규", role: "리드 개발자" },
+  { name: "김도솔", role: "AI 개발자" },
+  { name: "신지원", role: "프로덕트 디자이너" },
+  { name: "김희진", role: "백엔드 개발자" },
+  { name: "고준표", role: "마케터" },
+  { name: "박영아", role: "프로덕트 기획자" },
+  { name: "임설", role: "콘텐츠 디자이너" },
+]
+
 export default function Partners() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.3 })
@@ -36,8 +48,8 @@ export default function Partners() {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">SYMPLE 팀 소개</h3>
             <p className="text-gray-700 mb-8">
-              SYMPLE은 정신건강 전문가, 개발자, 디자이너, 그리고 연구원들로 구성된 다양한 배경을 가진 팀이 함께
-              만들어가고 있습니다.
+              SYMPLE은 심리적 어려움을 직접 겪어본 청년들이 나와 비슷한 이들을 돕자는 생각으로 함께 혁신을 만들어가고
+              있습니다.
             </p>
 
             <motion.div
@@ -46,25 +58,33 @@ export default function Partners() {
               animate={isInView ? "visible" : "hidden"}
               className="grid grid-cols-2 sm:grid-cols-3 gap-6"
             >
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <motion.div key={item} variants={itemVariants} className="text-center">
+              {teamMembers.map((member, index) => (
+                <motion.div key={index} variants={itemVariants} className="text-center">
                   <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full overflow-hidden mb-3">
                     <Image
-                      src={`/placeholder.svg?height=96&width=96`}
-                      alt={`팀원 ${item}`}
+                      src={`/placeholder.svg?height=96&width=96&text=${member.name}`}
+                      alt={`${member.name} - ${member.role}`}
                       width={96}
                       height={96}
                       className="object-cover w-full h-full"
                     />
                   </div>
-                  <h4 className="font-medium text-gray-900">팀원 {item}</h4>
-                  <p className="text-sm text-gray-500">직책</p>
+                  <h4 className="font-medium text-gray-900">{member.name}</h4>
+                  <p className="text-sm text-gray-500">{member.role}</p>
                 </motion.div>
               ))}
             </motion.div>
 
             <div className="mt-8">
-              <h4 className="font-semibold text-gray-900 mb-4">회사의 비전과 목표</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">회사의 비전과 목표</h4>
+              <div className="relative h-40 w-full mb-4">
+                <Image
+                  src="/placeholder.svg?height=200&width=600&text=SYMPLE+비전과+목표+시각화"
+                  alt="SYMPLE 비전과 목표"
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
               <p className="text-gray-700">
                 SYMPLE은 디지털 기술을 통해 정신건강 관리의 접근성을 높이고, 모든 사람이 자신의 감정을 이해하고 관리할
                 수 있는 세상을 만들어가고자 합니다.
@@ -128,7 +148,7 @@ export default function Partners() {
                   </div>
                   <div>
                     <h5 className="font-medium text-gray-900">B2C</h5>
-                    <p className="text-sm text-gray-600">기업 임직원 멘탈케어 프로그램</p>
+                    <p className="text-sm text-gray-600">청년들의 일상 속 우울/불안 해소 프로그램</p>
                   </div>
                 </div>
 
@@ -169,10 +189,14 @@ export default function Partners() {
             <div className="bg-teal-50 rounded-xl p-6">
               <h4 className="font-semibold text-teal-800 mb-4">파트너십 신청</h4>
               <p className="text-teal-700 mb-6">
-                SYMPLE과 함께 정신건강의 미래를 만들어가고 싶으신가요? 아래 버튼을 통해 파트너십 신청 양식을
-                작성해주세요.
+                SYMPLE과 함께 정신건강의 미래를 만들어가고 싶으신가요? 아래 버튼을 통해 파트너십 신청을 해주세요.
               </p>
-              <Button className="w-full bg-symple hover:bg-symple/90 text-white">파트너십 신청하기</Button>
+              <Button
+                className="w-full bg-symple hover:bg-symple/90 text-white"
+                onClick={() => (window.location.href = "mailto:symple.help@gmail.com?subject=파트너십 문의")}
+              >
+                파트너십 신청하기
+              </Button>
             </div>
           </div>
         </div>
@@ -183,7 +207,7 @@ export default function Partners() {
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div key={item} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg h-24">
                 <Image
-                  src={`/placeholder.svg?height=40&width=120`}
+                  src={`/placeholder.svg?height=40&width=120&text=파트너사+${item}`}
                   alt={`파트너사 ${item}`}
                   width={120}
                   height={40}

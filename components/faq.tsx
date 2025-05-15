@@ -8,12 +8,12 @@ const faqs = [
   {
     question: "SYMPLE과 오리의 꿈은 어떻게 다른가요?",
     answer:
-      "SYMPLE은 AI 기반 감정 분석과 CBT 기반 일일 퀘스트를 통해 일상 속에서 정신건강을 관리할 수 있는 앱입니다. 반면, 오리의 꿈은 게임 형태로 제공되는 자기주도형 치유 솔루션으로, 디지털 페노타이핑 기술을 활용하여 게임 플레이를 통해 자연스럽게 심리 상태를 탐구하고 개선할 수 있습니다.",
+      "SYMPLE은 AI 기반 감정 분석과 CBT 기반 일일 퀘스트를 통해 일상 속에서 정신건강을 관리할 수 있는 앱입니다. 반면, 오리의 꿈은 게임 형태로 제공되는 자기주도형 치유 솔루션으로, 디지털 피노타이핑 기술을 활용하여 게임 플레이를 통해 자연스럽게 심리 상태를 탐구하고 개선할 수 있습니다.",
   },
   {
-    question: "디지털 페노타이핑 기술이란 무엇인가요?",
+    question: "디지털 피노타이핑 기술이란 무엇인가요?",
     answer:
-      "디지털 페노타이핑 기술은 사용자의 디지털 기기 사용 패턴(터치 강도, 스크롤 속도, 앱 사용 시간 등)을 분석하여 정서 상태를 예측하는 기술입니다. SYMPLE은 이 기술을 활용하여 사용자의 심리 상태를 파악하고, 맞춤형 멘탈케어 솔루션을 제공합니다.",
+      "디지털 피노타이핑 기술은 사용자의 디지털 기기 사용 패턴(터치 강도, 스크롤 속도, 앱 사용 시간 등)을 분석하여 정서 상태를 예측하는 기술입니다. SYMPLE은 이 기술을 활용하여 사용자의 심리 상태를 파악하고, 맞춤형 멘탈케어 솔루션을 제공합니다.",
   },
   {
     question: "개인정보는 어떻게 보호되나요?",
@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "서비스 이용 중 기술적인 문제가 발생하면 어떻게 해야 하나요?",
     answer:
-      "서비스 이용 중 기술적인 문제가 발생하면 앱 내 '설정 > 고객 지원'에서 문의하거나, support@symple.kr로 이메일을 보내주세요. 24시간 이내에 답변 드리겠습니다.",
+      "서비스 이용 중 기술적인 문제가 발생하면 symple.help@gmail.com으로 이메일을 보내주세요. 24시간 이내에 답변 드리겠습니다.",
   },
   {
     question: "SYMPLE은 전문적인 정신건강 치료를 대체할 수 있나요?",
@@ -90,7 +90,12 @@ export default function FAQ() {
                 <p className="text-gray-600 mb-6">
                   서비스 이용 중 궁금한 점이나 문제가 있으시면 이메일로 문의해주세요. 24시간 이내에 답변 드리겠습니다.
                 </p>
-                <Button className="w-full bg-symple hover:bg-symple/90 text-white">support@symple.kr로 문의하기</Button>
+                <Button
+                  className="w-full bg-symple hover:bg-symple/90 text-white"
+                  onClick={() => (window.location.href = "mailto:symple.help@gmail.com?subject=서비스 문의")}
+                >
+                  symple.help@gmail.com으로 문의하기
+                </Button>
               </div>
 
               <div className="bg-gray-50 rounded-xl p-6">

@@ -13,14 +13,14 @@ export default function Products() {
     <section className="w-full py-20 bg-gray-50" id="products">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">메인 프로덕트</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">서비스</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             SYMPLE의 혁신적인 디지털 멘탈케어 솔루션을 소개합니다.
           </p>
         </div>
 
         <Tabs defaultValue="symple" className="w-full max-w-4xl mx-auto" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-2 mb-12">
+          <TabsList className="grid w-full grid-cols-2 mb-12 h-16">
             <TabsTrigger
               value="symple"
               className="text-lg py-4 data-[state=active]:bg-symple data-[state=active]:text-white"
@@ -49,13 +49,15 @@ export default function Products() {
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h4 className="font-semibold text-gray-900 mb-2">AI 기반 감정 분석</h4>
                     <p className="text-gray-600">
-                      일상 대화를 통해 AI가 사용자의 감정 상태를 분석하고, 실시간으로 맞춤형 멘탈 트레이닝을 제공합니다.
+                      심리 검사와 감정 기록을 통해 AI가 사용자의 감정 상태를 분석하고, 실시간으로 맞춤형 멘탈 트레이닝
+                      프로그램을 제공합니다.
                     </p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
-                    <h4 className="font-semibold text-gray-900 mb-2">CBT 기반 일일 퀘스트</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">CBT 기반 일일 미션</h4>
                     <p className="text-gray-600">
-                      인지행동치료(CBT) 원리를 적용한 일일 퀘스트를 통해 사용자의 심리적 성장을 단계적으로 지원합니다.
+                      인지행동치료(CBT) 원리를 적용한 일일 미션을 통해 잦은 성취감을 느끼도록 돕고, 심리적 성장을
+                      단계적으로 지원합니다.
                     </p>
                   </div>
                   <div className="bg-white p-6 rounded-xl shadow-sm">
@@ -114,7 +116,7 @@ export default function Products() {
                 className="order-2 md:order-1"
               >
                 <h3 className="text-2xl font-bold text-duck mb-2">오리의 꿈</h3>
-                <p className="text-xl text-gray-700 italic mb-6">"청년들의 복잡한 마음을 디지털로 탐험하다."</p>
+                <p className="text-xl text-gray-700 italic mb-6">"나만의 귀여운 오리와 함께하는 우울 해소 여정"</p>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h4 className="font-semibold text-gray-900 mb-2">디지털 피노타이핑 기술</h4>
@@ -148,30 +150,23 @@ export default function Products() {
                 transition={{ duration: 0.5 }}
                 className="order-1 md:order-2 relative"
               >
-                <div className="absolute -top-16 -right-16 w-24 h-24">
-                  <Image
-                    src="/images/duck-dream-logo.png"
-                    alt="오리의 꿈 로고"
-                    width={96}
-                    height={96}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative mx-auto w-[280px] md:w-[320px]">
-                  <Image
-                    src="/placeholder.svg?height=650&width=320"
-                    alt="오리의 꿈 앱 화면"
-                    width={320}
-                    height={650}
-                    className="rounded-[32px] shadow-xl border-8 border-gray-800"
-                  />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[240px] h-[520px] overflow-hidden rounded-[24px]">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative">
                     <Image
-                      src="/placeholder.svg?height=520&width=240"
-                      alt="오리의 꿈 앱 인터페이스"
-                      width={240}
-                      height={520}
-                      className="object-cover"
+                      src="/images/duck-dream-2.png"
+                      alt="오리의 꿈 앱 화면 - 메인"
+                      width={320}
+                      height={650}
+                      className="rounded-[24px] shadow-xl"
+                    />
+                  </div>
+                  <div className="relative">
+                    <Image
+                      src="/images/duck-dream-7.png"
+                      alt="오리의 꿈 앱 화면 - 오리 캐릭터"
+                      width={320}
+                      height={650}
+                      className="rounded-[24px] shadow-xl"
                     />
                   </div>
                 </div>
