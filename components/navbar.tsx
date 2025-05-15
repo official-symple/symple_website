@@ -64,7 +64,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <Button
                   variant="outline"
-                  className={`border-duck ${
+                  className={`border-duck border-2 ${
                     isScrolled
                       ? "bg-duck/30 hover:bg-duck text-gray-700 hover:text-white"
                       : "bg-duck/30 text-white hover:bg-duck"
@@ -75,8 +75,8 @@ export default function Navbar() {
                 <Button
                   className={`border-symple ${
                     isScrolled
-                      ? "bg-symple/30 hover:bg-symple text-gray-700 hover:text-white"
-                      : "bg-symple/30 text-white hover:bg-symple"
+                      ? "bg-symple hover:bg-symple text-white hover:text-white border-2"
+                      : "bg-symple text-white hover:bg-symple/90 border-2"
                   } transition-colors`}
                 >
                   SYMPLE 앱 다운로드
@@ -160,10 +160,13 @@ export default function Navbar() {
               </Link>
             </nav>
             <div className="mt-4 flex flex-col space-y-2">
-              <Button variant="outline" className="w-full border-duck bg-duck/30 hover:bg-duck hover:text-white">
+              <Button
+                variant="outline"
+                className="w-full border-duck bg-duck/30 hover:bg-duck hover:text-white border-2"
+              >
                 오리의 꿈 다운로드
               </Button>
-              <Button className="w-full border-symple bg-symple/30 hover:bg-symple hover:text-white">
+              <Button className="w-full border-symple bg-symple text-white hover:bg-symple/90 border-2">
                 SYMPLE 앱 다운로드
               </Button>
             </div>

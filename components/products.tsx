@@ -1,13 +1,67 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
+// SYMPLE 앱 이미지 배열 추가
+const sympleImages = [
+  "/images/symple-app-1.png",
+  "/images/symple-app-2.png",
+  "/images/symple-app-3.png",
+  "/images/symple-app-4.png",
+  "/images/symple-app-5.png",
+  "/images/symple-app-6.png",
+]
+
+// 오리의 꿈 앱 이미지 배열 추가
+const duckImages = [
+  "/images/duck-dream-1.png",
+  "/images/duck-dream-2.png",
+  "/images/duck-dream-3.png",
+  "/images/duck-dream-4.png",
+  "/images/duck-dream-5.png",
+  "/images/duck-dream-6.png",
+  "/images/duck-dream-7.png",
+  "/images/duck-dream-8.png",
+  "/images/duck-dream-9.png",
+  "/images/duck-dream-10.png",
+]
+
 export default function Products() {
   const [activeTab, setActiveTab] = useState("symple")
+  const [currentSympleIndex, setCurrentSympleIndex] = useState(0)
+  const [currentDuckIndex, setCurrentDuckIndex] = useState(0)
+  const sympleIntervalRef = useRef(null)
+  const duckIntervalRef = useRef(null)
+
+  // SYMPLE 이미지 자동 슬라이드 효과
+  useEffect(() => {
+    sympleIntervalRef.current = setInterval(() => {
+      setCurrentSympleIndex((prev) => (prev + 1) % sympleImages.length)
+    }, 3000)
+
+    return () => {
+      if (sympleIntervalRef.current) {
+        clearInterval(sympleIntervalRef.current)
+      }
+    }
+  }, [])
+
+  // 오리의 꿈 이미지 자동 슬라이드 효과
+  useEffect(() => {
+    duckIntervalRef.current = setInterval(() => {
+      setCurrentDuckIndex((prev) => (prev + 1) % duckImages.length)
+    }, 3000)
+
+    return () => {
+      if (duckIntervalRef.current) {
+        clearInterval(duckIntervalRef.current)
+      }
+    }
+  }, [])
 
   return (
     <section className="w-full py-20 bg-gray-50" id="products">
@@ -83,25 +137,33 @@ export default function Products() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative">
                     <Image
-                      src="/images/symple-app-2.png"
-                      alt="Symple 앱 화면 - CBT 정보"
+                      src={sympleImages[currentSympleIndex] || "/placeholder.svg"}
+                      alt={`Symple 앱 화면 ${currentSympleIndex + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl"
+                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                   <div className="relative">
                     <Image
-                      src="/images/symple-app-3.png"
-                      alt="Symple 앱 화면 - 활력 충전 프로그램"
+                      src={sympleImages[(currentSympleIndex + 1) % sympleImages.length] || "/placeholder.svg"}
+                      alt={`Symple 앱 화면 ${((currentSympleIndex + 1) % sympleImages.length) + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl"
+                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                 </div>
                 <div className="absolute top-0 right-0 -mr-4 -mt-4 bg-teal-100 rounded-full p-4 shadow-lg animate-pulse">
                   <span className="text-teal-600 font-bold">NEW</span>
+                </div>
+                <div className="flex justify-center mt-4 space-x-2">
+                  {sympleImages.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full ${index === currentSympleIndex ? "bg-symple" : "bg-gray-300"}`}
+                    />
+                  ))}
                 </div>
               </motion.div>
             </div>
@@ -153,25 +215,33 @@ export default function Products() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="relative">
                     <Image
-                      src="/images/duck-dream-2.png"
-                      alt="오리의 꿈 앱 화면 - 메인"
+                      src={duckImages[currentDuckIndex] || "/placeholder.svg"}
+                      alt={`오리의 꿈 앱 화면 ${currentDuckIndex + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl"
+                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                   <div className="relative">
                     <Image
-                      src="/images/duck-dream-7.png"
-                      alt="오리의 꿈 앱 화면 - 오리 캐릭터"
+                      src={duckImages[(currentDuckIndex + 1) % duckImages.length] || "/placeholder.svg"}
+                      alt={`오리의 꿈 앱 화면 ${((currentDuckIndex + 1) % duckImages.length) + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl"
+                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                 </div>
                 <div className="absolute top-0 right-0 -mr-4 -mt-4 bg-yellow-100 rounded-full p-4 shadow-lg">
                   <span className="text-yellow-600 font-bold">인기</span>
+                </div>
+                <div className="flex justify-center mt-4 space-x-2">
+                  {duckImages.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full ${index === currentDuckIndex ? "bg-duck" : "bg-gray-300"}`}
+                    />
+                  ))}
                 </div>
               </motion.div>
             </div>

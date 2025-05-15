@@ -6,15 +6,24 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const teamMembers = [
-  { name: "김민수", role: "CEO" },
-  { name: "이주원", role: "CPO" },
+  { name: "김민수", role: "CEO", image: "/images/team/민수.png" },
+  { name: "이주원", role: "CPO", image: "/images/team/주원.png" },
+  { name: "김도솔", role: "AI 개발자", image: "/images/team/도솔.png" },
+  { name: "박영아", role: "프로덕트 기획자", image: "/images/team/영아.png" },
   { name: "강민규", role: "리드 개발자" },
-  { name: "김도솔", role: "AI 개발자" },
   { name: "신지원", role: "프로덕트 디자이너" },
   { name: "김희진", role: "백엔드 개발자" },
   { name: "고준표", role: "마케터" },
-  { name: "박영아", role: "프로덕트 기획자" },
   { name: "임설", role: "콘텐츠 디자이너" },
+]
+
+const partnerLogos = [
+  { name: "연세대학교", logo: "/images/partners/연세대학교.png" },
+  { name: "보건복지부", logo: "/images/partners/보건복지부.png" },
+  { name: "국립정신건강센터", logo: "/images/partners/국립정신건강센터.png" },
+  { name: "멘탈헬스코리아", logo: "/images/partners/멘탈헬스코리아.png" },
+  { name: "대한디지털치료학회", logo: "/images/partners/대한디지털치료학회.png" },
+  { name: "Digital Healthcare Partners", logo: "/placeholder.svg?height=40&width=120&text=DHP" },
 ]
 
 export default function Partners() {
@@ -62,7 +71,7 @@ export default function Partners() {
                 <motion.div key={index} variants={itemVariants} className="text-center">
                   <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full overflow-hidden mb-3">
                     <Image
-                      src={`/placeholder.svg?height=96&width=96&text=${member.name}`}
+                      src={member.image || `/placeholder.svg?height=96&width=96&text=${member.name}`}
                       alt={`${member.name} - ${member.role}`}
                       width={96}
                       height={96}
@@ -203,15 +212,15 @@ export default function Partners() {
 
         <div className="mt-16">
           <h3 className="text-xl font-bold text-gray-900 text-center mb-8">함께하는 파트너사</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg h-24">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {partnerLogos.map((partner, index) => (
+              <div key={index} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg h-24">
                 <Image
-                  src={`/placeholder.svg?height=40&width=120&text=파트너사+${item}`}
-                  alt={`파트너사 ${item}`}
+                  src={partner.logo || "/placeholder.svg"}
+                  alt={`${partner.name} 로고`}
                   width={120}
                   height={40}
-                  className="opacity-70 hover:opacity-100 transition-opacity"
+                  className="opacity-70 hover:opacity-100 transition-opacity object-contain"
                 />
               </div>
             ))}
