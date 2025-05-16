@@ -171,20 +171,8 @@ export default function Partners() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-                      <path
-                        d="M12 8V16"
-                        stroke="#0D9488"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M8 12H16"
-                        stroke="#0D9488"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <path d="M12 8V16" stroke="#0D9488" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M8 12H16" stroke="#0D9488" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
                   <div>
@@ -214,13 +202,13 @@ export default function Partners() {
           <h3 className="text-xl font-bold text-gray-900 text-center mb-8">함께하는 파트너사</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {partnerLogos.map((partner, index) => (
-              <div key={index} className="flex items-center justify-center p-4 bg-gray-50 rounded-lg h-24">
+              <div key={index} className="flex items-center justify-center p-6 bg-gray-50 rounded-lg h-32">
                 <Image
                   src={partner.logo || "/placeholder.svg"}
                   alt={`${partner.name} 로고`}
-                  width={120}
-                  height={40}
-                  className="opacity-70 hover:opacity-100 transition-opacity object-contain"
+                  width={180}
+                  height={60}
+                  className="opacity-70 hover:opacity-100 transition-opacity object-contain h-16 w-auto"
                 />
               </div>
             ))}
