@@ -17,20 +17,41 @@ export default function CTA() {
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              복잡한 마음을 <span className="text-yellow-300">SYMPLE</span>하게
+              복잡한 마음을
+              <br />
+              <span className="text-blue-900">SYMPLE</span>하게
             </h2>
             <p className="text-lg md:text-xl text-teal-100 mb-10 max-w-2xl mx-auto">
-              지금 바로 SYMPLE과 함께 정신건강 관리를 시작하세요. 당신의 마음이 더 단순하고 행복해질 수 있도록
-              도와드립니다.
+              지금 바로 SYMPLE과 함께
+              <br />
+              정신건강 관리를 시작하세요.
+              <br />
+              당신의 마음이 더 단순하고
+              <br />
+              행복해질 수 있도록 도와드립니다.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button className="bg-white text-symple hover:bg-green-100 px-8 py-6 rounded-lg text-lg">
+              <Button
+                className="bg-white text-symple hover:bg-green-100 px-8 py-6 rounded-lg text-lg"
+                onClick={() =>
+                  window.open(
+                    "https://apps.apple.com/kr/app/%EC%8B%AC%ED%94%8C-symple-%EB%82%98%EB%A7%8C%EC%9D%98-%EB%A7%88%EC%9D%8C-%EA%B1%B4%EA%B0%95-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%84%88/id6738629592",
+                    "_blank",
+                  )
+                }
+              >
                 Symple 앱 다운로드
               </Button>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-symple/80 px-8 py-6 rounded-lg text-lg"
+                className="border-white text-duck hover:bg-symple/80 px-8 py-6 rounded-lg text-lg"
+                onClick={() =>
+                  window.open(
+                    "https://www.figma.com/proto/gRgVJp4n2mzlqcV2boQNyk/%EC%98%A4%EB%A6%AC%EC%9D%98-%EA%BF%88--Copy-?page-id=2011%3A8516&node-id=2119-7832&viewport=-3038%2C-1008%2C0.32&t=4xpa7RlcHmmAW5U1-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2119%3A7832&show-proto-sidebar=1",
+                    "_blank",
+                  )
+                }
               >
                 오리의 꿈 체험하기
               </Button>
@@ -50,24 +71,28 @@ export default function CTA() {
                 <div className="text-teal-100">앱 평점</div>
               </div>
             </div>
-          </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-8">
-            <Image
-              src="/placeholder.svg?height=50&width=160&text=App+Store"
-              alt="App Store"
-              width={160}
-              height={50}
-              className="h-12 w-auto"
-            />
-            <Image
-              src="/placeholder.svg?height=50&width=160&text=Google+Play"
-              alt="Google Play"
-              width={160}
-              height={50}
-              className="h-12 w-auto"
-            />
-          </div>
+            <div className="flex justify-center gap-8 mt-8">
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/images/duck-mascot.png"
+                  alt="오리의 꿈 마스코트"
+                  width={96}
+                  height={96}
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative w-24 h-24">
+                <Image
+                  src="/images/white-clover.png"
+                  alt="화이트 클로버"
+                  width={96}
+                  height={96}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

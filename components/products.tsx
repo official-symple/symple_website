@@ -13,7 +13,7 @@ const sympleImages = [
   "/images/symple-app-3.png",
   "/images/symple-app-4.png",
   "/images/symple-app-5.png",
-  "/images/symple-app-6.png",
+  "/images/symple-statistics.png",
 ]
 
 // 오리의 꿈 앱 이미지 배열 추가
@@ -69,7 +69,9 @@ export default function Products() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">서비스</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            SYMPLE의 혁신적인 디지털 멘탈케어 솔루션을 소개합니다.
+            SYMPLE의 혁신적인
+            <br />
+            디지털 멘탈케어 솔루션을 소개합니다.
           </p>
         </div>
 
@@ -98,7 +100,7 @@ export default function Products() {
                 className="order-2 md:order-1"
               >
                 <h3 className="text-2xl font-bold text-symple mb-2">Symple</h3>
-                <p className="text-xl text-gray-700 italic mb-6">"당신의 마음을 단순하게, 그러나 깊이 있게."</p>
+                <p className="text-xl text-gray-700 italic mb-6">당신의 마음을 단순하게, 그러나 깊이 있게.</p>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h4 className="font-semibold text-gray-900 mb-2">AI 기반 감정 분석</h4>
@@ -121,8 +123,16 @@ export default function Products() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-8">
-                  <Button className="bg-symple hover:bg-symple/90 text-white px-6 py-2 rounded-lg">
+                <div className="mt-8 flex justify-center md:justify-start">
+                  <Button
+                    className="bg-symple hover:bg-symple/90 text-white px-6 py-2 rounded-lg"
+                    onClick={() =>
+                      window.open(
+                        "https://apps.apple.com/kr/app/%EC%8B%AC%ED%94%8C-symple-%EB%82%98%EB%A7%8C%EC%9D%98-%EB%A7%88%EC%9D%8C-%EA%B1%B4%EA%B0%95-%ED%8A%B8%EB%A0%88%EC%9D%B4%EB%84%88/id6738629592",
+                        "_blank",
+                      )
+                    }
+                  >
                     Symple 앱 다운로드
                   </Button>
                 </div>
@@ -141,7 +151,7 @@ export default function Products() {
                       alt={`Symple 앱 화면 ${currentSympleIndex + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
+                      className="rounded-[10px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                   <div className="relative">
@@ -150,7 +160,7 @@ export default function Products() {
                       alt={`Symple 앱 화면 ${((currentSympleIndex + 1) % sympleImages.length) + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
+                      className="rounded-[10px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                 </div>
@@ -178,7 +188,7 @@ export default function Products() {
                 className="order-2 md:order-1"
               >
                 <h3 className="text-2xl font-bold text-duck mb-2">오리의 꿈</h3>
-                <p className="text-xl text-gray-700 italic mb-6">"나만의 귀여운 오리와 함께하는 우울 해소 여정"</p>
+                <p className="text-xl text-gray-700 italic mb-6">나만의 귀여운 오리와 함께하는 우울 해소 여정</p>
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-xl shadow-sm">
                     <h4 className="font-semibold text-gray-900 mb-2">디지털 피노타이핑 기술</h4>
@@ -199,8 +209,16 @@ export default function Products() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-8">
-                  <Button className="bg-duck hover:bg-duck/90 text-white px-6 py-2 rounded-lg">
+                <div className="mt-8 flex justify-center md:justify-start">
+                  <Button
+                    className="bg-duck hover:bg-duck/90 text-white px-6 py-2 rounded-lg"
+                    onClick={() =>
+                      window.open(
+                        "https://www.figma.com/proto/gRgVJp4n2mzlqcV2boQNyk/%EC%98%A4%EB%A6%AC%EC%9D%98-%EA%BF%88--Copy-?page-id=2011%3A8516&node-id=2119-7832&viewport=-3038%2C-1008%2C0.32&t=4xpa7RlcHmmAW5U1-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2119%3A7832&show-proto-sidebar=1",
+                        "_blank",
+                      )
+                    }
+                  >
                     오리의 꿈 체험하기
                   </Button>
                 </div>
@@ -219,7 +237,7 @@ export default function Products() {
                       alt={`오리의 꿈 앱 화면 ${currentDuckIndex + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
+                      className="rounded-[10px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                   <div className="relative">
@@ -228,7 +246,7 @@ export default function Products() {
                       alt={`오리의 꿈 앱 화면 ${((currentDuckIndex + 1) % duckImages.length) + 1}`}
                       width={320}
                       height={650}
-                      className="rounded-[24px] shadow-xl transition-opacity duration-500"
+                      className="rounded-[10px] shadow-xl transition-opacity duration-500"
                     />
                   </div>
                 </div>
@@ -255,8 +273,8 @@ export default function Products() {
             >
               <p className="font-medium">
                 {activeTab === "symple"
-                  ? "Symple은 매일 10분으로 정신 건강을 관리할 수 있습니다."
-                  : "오리의 꿈은 게임을 통해 자연스럽게 심리 치유를 경험할 수 있습니다."}
+                  ? "Symple은 매일 10분으로\n정신 건강을 관리할 수 있습니다."
+                  : "오리의 꿈은 게임을 통해 자연스럽게\n심리 치유를 경험할 수 있습니다."}
               </p>
             </div>
           </div>

@@ -113,11 +113,15 @@ export default function Technology() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-yellow-400 mb-8">연구 기반</h3>
+            <h3 className="text-2xl font-bold text-teal-400 mb-8">연구 기반</h3>
             <div className="bg-gray-800 rounded-xl p-6 mb-8">
               <h4 className="text-xl font-semibold text-white mb-4">임상적 효과 검증</h4>
               <p className="text-gray-300 mb-4">
-                SYMPLE의 디지털 인지행동치료와 피노타이핑 기술은 다양한 임상 연구를 통해 효과가 검증되었습니다.
+                SYMPLE의 디지털 인지행동치료와
+                <br />
+                피노타이핑 기술은 다양한 임상 연구를 통해
+                <br />
+                효과가 검증되었습니다.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div className="bg-gray-700 p-4 rounded-lg text-center">
@@ -142,7 +146,9 @@ export default function Technology() {
             <div className="bg-gray-800 rounded-xl p-6">
               <h4 className="text-xl font-semibold text-white mb-4">학계 협업</h4>
               <p className="text-gray-300 mb-4">
-                유수의 대학 및 연구기관과 협력하여 지속적인 연구와 서비스 개선을 진행하고 있습니다.
+                유수의 대학 및 연구기관과 협력하여
+                <br />
+                임상 연구와 서비스 개선을 진행하고 있습니다.
               </p>
               <div className="flex flex-wrap gap-3 mt-4">
                 <div className="bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-300">연세대학교 심리학과</div>
@@ -162,10 +168,11 @@ export default function Technology() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <div className="bg-gray-800 rounded-full px-8 py-4 inline-block">
+          <div className="bg-gray-800 rounded-full px-8 py-4 inline-block text-center">
             <p className="text-gray-300">
               <span className="text-symple font-bold">10,000+</span> 명의 사용자가 SYMPLE과 함께
-              <span className="text-symple font-bold"> 정신 건강</span>을 관리하고 있습니다.
+              <br />
+              <span className="text-symple font-bold">정신 건강</span>을 관리하고 있습니다.
             </p>
           </div>
         </div>

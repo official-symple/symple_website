@@ -16,7 +16,11 @@ export default function Statistics() {
             데이터로 보는 <span className="text-symple">SYMPLE</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            SYMPLE 서비스는 사용자의 감정 데이터를 시각화하여 자신의 정신 건강 상태를 쉽게 파악할 수 있도록 도와줍니다.
+            SYMPLE의 서비스는 사용자의 감정 데이터를
+            <br />
+            시각화하여 자신의 정신 건강 상태를
+            <br />
+            쉽게 파악할 수 있도록 도와줍니다.
           </p>
         </div>
 
@@ -85,20 +89,20 @@ export default function Statistics() {
               >
                 <div className="relative">
                   <Image
-                    src="/images/symple-app-5.png"
-                    alt="감정 추적 캘린더"
+                    src="/images/symple-statistics.png"
+                    alt="감정 통계 대시보드"
                     width={320}
                     height={650}
-                    className="rounded-[24px] shadow-xl"
+                    className="rounded-[10px] shadow-xl"
                   />
                 </div>
                 <div className="relative">
                   <Image
-                    src="/images/symple-app-6.png"
-                    alt="감정 통계 대시보드"
+                    src="/images/symple-app-5.png"
+                    alt="Symple 앱 화면"
                     width={320}
                     height={650}
-                    className="rounded-[24px] shadow-xl"
+                    className="rounded-[10px] shadow-xl"
                   />
                 </div>
               </motion.div>
@@ -144,7 +148,7 @@ export default function Statistics() {
                     alt="오리의 꿈 - 걸음 수 통계"
                     width={320}
                     height={650}
-                    className="rounded-[24px] shadow-xl"
+                    className="rounded-[10px] shadow-xl"
                   />
                 </div>
                 <div className="relative">
@@ -153,7 +157,7 @@ export default function Statistics() {
                     alt="오리의 꿈 - 활동 대시보드"
                     width={320}
                     height={650}
-                    className="rounded-[24px] shadow-xl"
+                    className="rounded-[10px] shadow-xl"
                   />
                 </div>
               </motion.div>

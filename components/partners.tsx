@@ -10,11 +10,10 @@ const teamMembers = [
   { name: "이주원", role: "CPO", image: "/images/team/주원.png" },
   { name: "김도솔", role: "AI 개발자", image: "/images/team/도솔.png" },
   { name: "박영아", role: "프로덕트 기획자", image: "/images/team/영아.png" },
-  { name: "강민규", role: "리드 개발자" },
-  { name: "신지원", role: "프로덕트 디자이너" },
-  { name: "김희진", role: "백엔드 개발자" },
-  { name: "고준표", role: "마케터" },
-  { name: "임설", role: "콘텐츠 디자이너" },
+  { name: "강민규", role: "리드 개발자", image: "/images/team/민규.png" },
+  { name: "신지원", role: "프로덕트 디자이너", image: "/images/team/지원.png" },
+  { name: "고준표", role: "마케터", image: "/images/team/준표.png" },
+  { name: "김희진", role: "백엔드 개발자", image: "/images/team/희진.png" },
 ]
 
 const partnerLogos = [
@@ -23,12 +22,12 @@ const partnerLogos = [
   { name: "국립정신건강센터", logo: "/images/partners/국립정신건강센터.png" },
   { name: "멘탈헬스코리아", logo: "/images/partners/멘탈헬스코리아.png" },
   { name: "대한디지털치료학회", logo: "/images/partners/대한디지털치료학회.png" },
-  { name: "Digital Healthcare Partners", logo: "/placeholder.svg?height=40&width=120&text=DHP" },
+  { name: "연세대학교 창업지원단", logo: "/images/partners/연세대학교-창업지원단.png" },
 ]
 
 export default function Partners() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, amount: 0.3 })
+  const isInView = useInView(ref, { once: false, amount: 0.1, fallback: true })
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -57,26 +56,39 @@ export default function Partners() {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">SYMPLE 팀 소개</h3>
             <p className="text-gray-700 mb-8">
-              SYMPLE은 심리적 어려움을 직접 겪어본 청년들이 나와 비슷한 이들을 돕자는 생각으로 함께 혁신을 만들어가고
-              있습니다.
+              SYMPLE은 심리적 어려움을 직접 겪어본 청년들이
+              <br />
+              나와 비슷한 이들을 돕자는 생각으로
+              <br />
+              함께 혁신을 만들어가고 있습니다.
             </p>
 
             <motion.div
               variants={containerVariants}
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              animate="visible"
               className="grid grid-cols-2 sm:grid-cols-3 gap-6"
+              style={{ opacity: 1 }} // Ensure it's always visible
             >
               {teamMembers.map((member, index) => (
                 <motion.div key={index} variants={itemVariants} className="text-center">
-                  <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full overflow-hidden mb-3">
-                    <Image
-                      src={member.image || `/placeholder.svg?height=96&width=96&text=${member.name}`}
-                      alt={`${member.name} - ${member.role}`}
-                      width={96}
-                      height={96}
-                      className="object-cover w-full h-full"
-                    />
+                  <div className="w-24 h-24 mx-auto bg-gray-200 rounded-full overflow-hidden mb-3 relative">
+                    <div className="w-full h-full">
+                      {member.image ? (
+                        <Image
+                          src={member.image || "/placeholder.svg"}
+                          alt={`${member.name} - ${member.role}`}
+                          width={96}
+                          height={96}
+                          className="object-cover w-full h-full"
+                          unoptimized
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray-500 font-medium">
+                          {member.name.charAt(0)}
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <h4 className="font-medium text-gray-900">{member.name}</h4>
                   <p className="text-sm text-gray-500">{member.role}</p>
@@ -87,12 +99,7 @@ export default function Partners() {
             <div className="mt-8">
               <h4 className="text-xl font-bold text-gray-900 mb-4">회사의 비전과 목표</h4>
               <div className="relative h-40 w-full mb-4">
-                <Image
-                  src="/placeholder.svg?height=200&width=600&text=SYMPLE+비전과+목표+시각화"
-                  alt="SYMPLE 비전과 목표"
-                  fill
-                  className="rounded-lg object-cover"
-                />
+                <Image src="/images/night-sky.png" alt="SYMPLE 비전과 목표" fill className="rounded-lg object-cover" />
               </div>
               <p className="text-gray-700">
                 SYMPLE은 디지털 기술을 통해 정신건강 관리의 접근성을 높이고, 모든 사람이 자신의 감정을 이해하고 관리할
@@ -185,7 +192,7 @@ export default function Partners() {
 
             <div className="bg-teal-50 rounded-xl p-6">
               <h4 className="font-semibold text-teal-800 mb-4">파트너십 신청</h4>
-              <p className="text-teal-700 mb-6">
+              <p className="text-teal-700 mb-6 max-w-2xl mx-auto">
                 SYMPLE과 함께 정신건강의 미래를 만들어가고 싶으신가요? 아래 버튼을 통해 파트너십 신청을 해주세요.
               </p>
               <Button
@@ -202,14 +209,27 @@ export default function Partners() {
           <h3 className="text-xl font-bold text-gray-900 text-center mb-8">함께하는 파트너사</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {partnerLogos.map((partner, index) => (
-              <div key={index} className="flex items-center justify-center p-6 bg-gray-50 rounded-lg h-32">
-                <Image
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={`${partner.name} 로고`}
-                  width={180}
-                  height={60}
-                  className="opacity-70 hover:opacity-100 transition-opacity object-contain h-16 w-auto"
-                />
+              <div
+                key={index}
+                className={`flex items-center justify-center ${partner.name === "연세대학교" ? "p-4" : "p-6"} bg-gray-50 rounded-lg h-32`}
+              >
+                {partner.name === "연세대학교" ? (
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={`${partner.name} 로고`}
+                    width={280}
+                    height={100}
+                    className="opacity-70 hover:opacity-100 transition-opacity object-contain h-24 w-auto"
+                  />
+                ) : (
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={`${partner.name} 로고`}
+                    width={180}
+                    height={60}
+                    className="opacity-70 hover:opacity-100 transition-opacity object-contain h-16 w-auto"
+                  />
+                )}
               </div>
             ))}
           </div>

@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -73,10 +73,10 @@ export default function Navbar() {
                   오리의 꿈 다운로드
                 </Button>
                 <Button
-                  className={`border-symple ${
+                  className={`border-symple border-2 ${
                     isScrolled
-                      ? "bg-symple hover:bg-symple text-white hover:text-white border-2"
-                      : "bg-symple text-white hover:bg-symple/90 border-2"
+                      ? "bg-symple/30 hover:bg-symple/50 text-symple hover:text-white"
+                      : "bg-symple/30 text-white hover:bg-symple/50 border-2"
                   } transition-colors`}
                 >
                   SYMPLE 앱 다운로드
@@ -166,7 +166,7 @@ export default function Navbar() {
               >
                 오리의 꿈 다운로드
               </Button>
-              <Button className="w-full border-symple bg-symple text-white hover:bg-symple/90 border-2">
+              <Button className="w-full border-symple bg-symple/30 text-symple hover:bg-symple/50 border-2">
                 SYMPLE 앱 다운로드
               </Button>
             </div>
