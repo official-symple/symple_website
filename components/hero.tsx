@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
@@ -65,6 +66,7 @@ const slides = [
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const router = useRouter()
   const isMobile = useMobile()
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -149,6 +151,7 @@ export default function Hero() {
             <Button
               variant="outline"
               className={`border-${currentSlideData.color} text-${currentSlideData.color} hover:bg-${currentSlideData.color}/10 px-8 py-6 rounded-lg text-lg`}
+              onClick={() => router.push("/duck-dream")}
             >
               서비스 알아보기
             </Button>

@@ -3,15 +3,21 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { useMobile } from "@/hooks/use-mobile"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isDuckDreamPage = pathname?.startsWith("/duck-dream")
   const isMobile = useMobile()
+  const scrolled = isDuckDreamPage || isScrolled
 
   useEffect(() => {
+    if (isDuckDreamPage) return
+
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true)
@@ -22,12 +28,12 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isDuckDreamPage])
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -40,7 +46,7 @@ export default function Navbar() {
 
           {!isMobile ? (
             <>
-              <nav className={`flex items-center space-x-8 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+              <nav className={`flex items-center space-x-8 ${scrolled ? "text-gray-700" : "text-white"}`}>
                 <Link href="#why-symple" className="hover:text-symple transition-colors">
                   Why SYMPLE?
                 </Link>
@@ -65,7 +71,7 @@ export default function Navbar() {
                 <Button
                   variant="outline"
                   className={`border-duck border-2 ${
-                    isScrolled
+                    scrolled
                       ? "bg-duck/30 hover:bg-duck text-gray-700 hover:text-white"
                       : "bg-duck/30 text-white hover:bg-duck"
                   } transition-colors`}
@@ -74,7 +80,7 @@ export default function Navbar() {
                 </Button>
                 <Button
                   className={`border-symple border-2 ${
-                    isScrolled
+                    scrolled
                       ? "bg-symple/30 hover:bg-symple/50 text-symple hover:text-white"
                       : "bg-symple/30 text-white hover:bg-symple/50 border-2"
                   } transition-colors`}
@@ -86,7 +92,7 @@ export default function Navbar() {
           ) : (
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 ${isScrolled ? "text-gray-900" : "text-white"}`}
+              className={`p-2 ${scrolled ? "text-gray-900" : "text-white"}`}
             >
               {isMenuOpen ? (
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

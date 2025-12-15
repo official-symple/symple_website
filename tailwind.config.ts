@@ -56,6 +56,10 @@ const config = {
         symple: "#00BF7F",
         duck: "#779966",
       },
+      fontFamily: {
+        tmoney: ["'Jua'", "Pretendard", "sans-serif"],
+        pretendard: ["Pretendard", "Noto Sans KR", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
