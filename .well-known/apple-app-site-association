@@ -6,9 +6,12 @@
         "appIDs": [
           "9DNQC6645N.com.symple.ducksdream"
         ],
+        "paths": [
+          "*"
+        ],
         "components": [
           {
-            "/": "/event/*"
+            "/": "/*"
           }
         ]
       }
