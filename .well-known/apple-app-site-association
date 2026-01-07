@@ -3,17 +3,20 @@
     "apps": [],
     "details": [
       {
-        "appIDs": ["9DNQC6645N.com.symple.ducksdream"],
-        "paths": ["*"],
+        "appIDs": [
+          "9DNQC6645N.com.symple.ducksdream"
+        ],
         "components": [
           {
-            "/": "/*"
+            "/": "/event/*"
           }
         ]
       }
     ]
   },
   "webcredentials": {
-    "apps": ["9DNQC6645N.com.symple.ducksdream"]
+    "apps": [
+      "9DNQC6645N.com.symple.ducksdream"
+    ]
   }
 }
